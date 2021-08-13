@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ubuntu:
+    build: .
+    working_dir: /var/tmp
+    volumes:
+        - ./work:/var/tmp
+    # コンテナ起動後、StatusがExitにならないようttyの設定
+    tty: true
+    privileged: true
